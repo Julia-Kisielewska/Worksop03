@@ -8,7 +8,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,30 +15,21 @@ import java.util.List;
 public class UserList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        UserDao userDao = new UserDao();
+        User[] users = new User[0];
+        try {
+            users = userDao.findAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        List<User> usersList = Arrays.asList(users);
 
-//        UserDao newDao = new UserDao();
-//        List<User> users = new ArrayList<>();
-//
-//        try {
-//            users = Arrays.asList(newDao.findAll());
-//            request.setAttribute("users", "user");
-//            getServletContext().getRequestDispatcher("/usersList.jsp").forward(request, response);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-
-//gółwny jsp====================================
-
-
+        request.setAttribute("users", users);
         getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//        String name = request.getParameter("Nazwa");
-//        String email = request.getParameter("Email");
-//        String password = request.getParameter("Hasło");
+
     }
 }

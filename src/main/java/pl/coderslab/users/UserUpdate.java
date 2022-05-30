@@ -8,27 +8,29 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-@WebServlet("/user/show")
-public class UserShow extends HttpServlet {
+@WebServlet("/user/update")
+public class UserUpdate extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("Nazwa");
+        String email = request.getParameter("Email");
+        String password = request.getParameter("Hasło");
         int id = Integer.parseInt(request.getParameter("id"));
 
         UserDao userDao = new UserDao();
-        User user = null;
+        User user = new User();
+        user.setId(id);
+        user.setUserName(name);
+        user.setEmail(email);
+        user.setPassword(password);
         try {
-            user = userDao.read(id);
+            userDao.update(user);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        List<User> users= new ArrayList<>();
-        users.add(user);
-        request.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
+        response.sendRedirect("http://localhost:8080/user/list");
     }
 
     @Override

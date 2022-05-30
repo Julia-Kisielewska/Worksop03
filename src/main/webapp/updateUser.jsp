@@ -9,7 +9,7 @@
 
 Dodaj użytkownika
 
-<form action = "/user/add" method ="post">
+<form action = "/user/update" method ="get">
     <input type = "text" name = "Nazwa" value="Nazwa"/>
     <input type = "text" name = "Email" value="Email"/>
     <input type = "text" name = "Hasło" value="Hasło"/>

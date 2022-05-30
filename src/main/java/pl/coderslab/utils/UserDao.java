@@ -3,8 +3,7 @@ package pl.coderslab.utils;
 import java.sql.*;
 import java.util.Arrays;
 
-public class UserDao<user> {
-
+public class UserDao {
     private static final String CREATE_USER_QUERY =
             "INSERT INTO users (EMAIL, USERNAME, PASSWORD) VALUES (?,?,?)";
 
@@ -139,4 +138,3 @@ public class UserDao<user> {
         return tmpUsers;
     }
 }
-
