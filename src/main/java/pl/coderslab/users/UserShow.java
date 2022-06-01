@@ -28,7 +28,7 @@ public class UserShow extends HttpServlet {
         List<User> users= new ArrayList<>();
         users.add(user);
         request.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/users/list.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/users/show.jsp").forward(request, response);
     }
 
     @Override

@@ -1,27 +1,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<body id="page-top">
+<%--<body id="page-top">--%>
 
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
+<%--<!-- Begin Page Content -->--%>
+<%--<div class="container-fluid">--%>
 
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
-    </div>
+<%--    <!-- Page Heading -->--%>
+<%--    <div class="d-sm-flex align-items-center justify-content-between mb-4">--%>
+<%--        <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>--%>
+<%--        <a href="/user/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i--%>
+<%--                class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>--%>
+<%--    </div>--%>
 
-    <!-- Content Row -->
-    <div class="row">
-        <%@ include file="/usersList.jsp" %>
-    </div>
-    <!-- /.container-fluid -->
+<%--    <!-- Content Row -->--%>
+<%--    <div class="row">--%>
+<%--        <%@ include file="/usersList.jsp" %>--%>
+<%--    </div>--%>
+<%--    <!-- /.container-fluid -->--%>
 
-</div>
-<!-- End of Main Content -->
+<%--</div>--%>
+<%--<!-- End of Main Content -->--%>
 
 <!-- Footer -->
 <footer class="sticky-footer bg-white">

@@ -44,7 +44,7 @@
 
     <!-- Content Row -->
     <div class="row">
-        <%@ include file="/usersList.jsp" %>
+        <%@ include file="/addUser.jsp" %>
     </div>
     <!-- /.container-fluid -->
 
